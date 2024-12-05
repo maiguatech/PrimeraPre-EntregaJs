@@ -1,68 +1,24 @@
-/*for ( let i = 1; i <= 20; i++){
-    ingresarNombre = prompt("Ingresa tu nombre")
+// Función principal para calcular el total
+function calculateTotal() {
+    let total = 0;
 
-    console.log("Turno N°: ", i, " Nombre: ", ingresarNombre)
-}*/
+    // Selecciona los productos marcados
+    const products = document.querySelectorAll(".product:checked");
+    products.forEach(product => {
+        total += parseFloat(product.getAttribute("data-price"));
+    });
 
-/*for (let i = 1; i <= 10; i++){
-    
-    if (i == 5){
-        continue;
-    }
-    console.log(i)
-}*/
+    // Selecciona los servicios marcados
+    const services = document.querySelectorAll(".service:checked");
+    services.forEach(service => {
+        total += parseFloat(service.getAttribute("data-price"));
+    });
 
-/*let repetir = false
-
-do{
-    console.log("Repetir al menos una vez")
-} while(repetir)*/
-
-//Idea para solamente escribir números en un formulario
-
-/*let numero = 0
-
-do{ 
-    numero = prompt("Ingresa un número")
-    console.log(numero)
-}while(parseInt(numero)){
-    console.log("Debes ingresar números!")
-}*/
-
-
-/*let nombre = prompt("Ingresa un nombre")
-
-while (nombre != "ESC"){
-    switch(nombre.toUpperCase()){
-        case "ANA":
-            console.log("Hola Ana")
-            break
-        case "JUAN":
-            console.log("Hola Juan")
-            break
-        case "CHRISTIAN":
-            console.log("Hola Christian")
-            break
-        default:
-            console.log("¿Quien te conoce papá?")
-            break
+    // Aplicar descuento condicional si el total excede un monto
+    if (total > 5000) {
+        total *= 0.9; // 10% de descuento
     }
 
-    nombre = prompt("Ingrese un nombre")
-}*/
-
-/*let numero = prompt("Ingresa un número")
-
-for (let i = 1; i <= numero; i++ ){
-    let saludo = "Hola"
-    console.log(i, saludo)
-}*/
-
-function solicitarNombre () {
-    let nombreIngresado = prompt("Ingresar nombre")
-    console.log("El nombre ingresado es: " + nombreIngresado)
+    // Actualiza el DOM con el costo total
+    document.getElementById("total").innerText = `Costo Total: $${total.toFixed(2)}`;
 }
-
-solicitarNombre();
-solicitarNombre();
-solicitarNombre();

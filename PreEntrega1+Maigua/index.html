@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coderhouse</title>
+    <title>Simulador de Estética</title>
 </head>
 <body>
-    
-<h1>Hola Mundo!</h1>
+    <h1>Simulador de Costo - Centro de Estética</h1>
+    <p>Selecciona productos y servicios para calcular el costo total:</p>
 
-<script src="main.js"></script>
+    <div>
+        <h2>Productos</h2>
+        <label><input type="checkbox" class="product" data-price="1000"> Crema Facial - $1000</label><br>
+        <label><input type="checkbox" class="product" data-price="1500"> Serum Antiedad - $1500</label><br>
+        <label><input type="checkbox" class="product" data-price="500"> Mascarilla - $500</label><br>
+    </div>
+
+    <div>
+        <h2>Servicios</h2>
+        <label><input type="checkbox" class="service" data-price="2000"> Limpieza Facial - $2000</label><br>
+        <label><input type="checkbox" class="service" data-price="3000"> Tratamiento Antiacné - $3000</label><br>
+        <label><input type="checkbox" class="service" data-price="2500"> Hidratación Profunda - $2500</label><br>
+    </div>
+
+    <button onclick="calculateTotal()">Calcular Total</button>
+
+    <h2 id="total">Costo Total: $0</h2>
+
+    <script src="main.js"></script>
 </body>
 </html>
